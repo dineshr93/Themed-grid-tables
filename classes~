@@ -1,0 +1,13 @@
+ui-jqgrid ui-widget ui-widget-content ui-corner-all
+{ 
+ ui-jqgrid-view
+ {
+  ui-jqgrid-titlebar ui-widget-header ui-corner-top ui-helper-clearfix
+  {
+   ui-jqgrid-titlebar-close HeaderButton
+   ui-jqgrid-title
+  }
+		
+  ui-state-default ui-jqgrid-hdiv
+  { ui-jqgrid-hbox { ui-jqgrid-htable {ui-jqgrid-labels { ui-state-default ui-th-column ui-th-ltr{ui-jqgrid-resize ui-jqgrid-resize-ltr       {ui-jqgrid-sortable{ui-grid-ico-sort ui-icon-asc ui-icon ui-icon-triangle-1-n ui-sort-ltr,ui-grid-ico-sort ui-icon-desc ui-icon ui-icon-triangle-1-s ui-sort-ltr ui-state-disabled}}} }}} }			
+	

@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OneEmpower</title>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+ 
+<link href="css/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
+<link href="css/ui.jqgrid.css" rel="stylesheet">
+<link href="css/ui.multiselect.css" rel="stylesheet">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <style type="text/css">
+        html, body { font-size: 75%; }
+    </style>
+
+<script src="js/jquery-1.7.1.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/ui.multiselect.js"></script>
+<script src="js/grid.locale-en.js"></script>
+<script src="js/jquery.jqGrid.src.js"></script>
+ <script src="js/bootstrap.min.js"></script>
+
+
+    <script type="text/javascript">
+
+   
+	$(document).ready(function () {
+            	    'use strict';
+            	    var mydata = [
+                    { id: "1",  invdate: "2007-10-01", name: "test",   note: "note",   amount: "200.00", tax: "10.00", closed: true,  				ship_via: "TN", total: "210.00" },
+                    { id: "2",  invdate: "2007-10-02", name: "test2",  note: "note2",  amount: "300.00", tax: "20.00", closed: false, 				ship_via: "FE", total: "320.00" },
+                    { id: "3",  invdate: "2007-09-01", name: "test3",  note: "note3",  amount: "400.00", tax: "30.00", closed: false, 				ship_via: "FE", total: "430.00" },
+                    { id: "4",  invdate: "2007-10-04", name: "test4",  note: "note4",  amount: "200.00", tax: "10.00", closed: true,  				ship_via: "TN", total: "210.00" },
+                    { id: "5",  invdate: "2007-10-31", name: "test5",  note: "note5",  amount: "300.00", tax: "20.00", closed: false, 				ship_via: "FE", total: "320.00" },
+                    { id: "6",  invdate: "2007-09-06", name: "test6",  note: "note6",  amount: "400.00", tax: "30.00", closed: false, 				ship_via: "FE", total: "430.00" },
+                    { id: "7",  invdate: "2007-10-04", name: "test7",  note: "note7",  amount: "200.00", tax: "10.00", closed: true,  				ship_via: "TN", total: "210.00" },
+                    { id: "8",  invdate: "2007-10-03", name: "test8",  note: "note8",  amount: "300.00", tax: "20.00", closed: false, 				ship_via: "FE", total: "320.00" },
+                    { id: "9",  invdate: "2007-09-01", name: "test9",  note: "note9",  amount: "400.00", tax: "30.00", closed: false, 				ship_via: "TN", total: "430.00" },
+                    { id: "10", invdate: "2007-09-08", name: "test10", note: "note10", amount: "500.00", tax: "30.00", closed: true,  				ship_via: "TN", total: "530.00" },
+                    { id: "11", invdate: "2007-09-08", name: "test11", note: "note11", amount: "500.00", tax: "30.00", closed: false, 				ship_via: "FE", total: "530.00" },
+                    { id: "12", invdate: "2007-09-10", name: "test12", note: "note12", amount: "500.00", tax: "30.00", closed: false, 				ship_via: "FE", total: "530.00" }], //mydata variable
+                
+		$grid = $("#list"),  //grid =list
+                initDateEdit = function (elem) { setTimeout(function () { $(elem).datepicker({
+                                         dateFormat: 'dd-M-yy',
+                            		 autoSize: true,
+                            		 changeYear: true,
+                            		 changeMonth: true,
+                          		 showButtonPanel: true,
+                            		 showWeek: true
+                        		});}, 100);//settimeout
+                },  //function elem init date edit
+                
+
+		 initDateSearch = function (elem) {setTimeout(function () {$(elem).datepicker({
+					dateFormat:'dd-M-yy',
+					autoSize:true,
+					changeYear:true,
+					changeMonth:true,
+					showWeek:true,
+					showButtonPanel:true
+					});}, 100);/*settimeout*/
+		},  /*function elem init date search*/                
+ 	     
+		numberTemplate={formatter:'number', 
+				align: 'right', 
+				sorttype: 'number', 
+				editable: true,
+				searchoptions: { sopt: ['eq', 'ne', 'lt', 'le', 'gt', 'ge', 'nu', 'nn', 'in', 'ni']}
+				};
+
+        /* number template=> (formatr,align,sorttype,editable,searhopt) *//* $('#jqgrid').setGridWidth($(window).width());*/
+       //-------------------------------------------------------------------------------          
+		$grid.jqGrid({
+		   datatype: 'local', //datatype
+                   data: mydata,  //data was set
+                   colNames: ['Client', 'Date', 'Amount', 'Tax', 'Total', 'Closed', 'Shipped via', 'Notes'],  //colnames
+                   
+		   colModel: [
+                     { name: 'name', index: 'name', editable: true, width: 70, editrules: { required: true},
+                        editoptions: { dataInit: function (elem) { $(elem).addClass('ui-state-highlight'); }}}, // 1st column model
+                    { name: 'invdate', index: 'invdate', width: 80, align: 'center', sorttype: 'date',
+                        formatter: 'date', formatoptions: { newformat: 'd-M-Y' }, editable: true, datefmt: 'd-M-Y',
+                        editoptions: { dataInit: initDateEdit },
+                        searchoptions: { sopt: ['eq', 'ne', 'lt', 'le', 'gt', 'ge'], dataInit: initDateSearch } }, // 2nd col model
+                    { name: 'amount', index: 'amount', width: 80, template: numberTemplate },  //3rd
+                    { name: 'tax', index: 'tax', width: 55, template: numberTemplate,
+                        editoptions: { dataInit: function (elem) { $(elem).addClass('ui-state-error'); }} }, //4th
+                    { name: 'total', index: 'total', width: 65, template: numberTemplate }, //5th
+                    {name: 'closed', index: 'closed', width: 75, align: 'center', editable: true, formatter: 'checkbox',
+                        edittype: 'checkbox', editoptions: {value: 'Yes:No', defaultValue: 'Yes'},
+                        stype: 'select', searchoptions: { sopt: ['eq', 'ne'], value: ':Any;true:Yes;false:No' } },  //6th
+                    {name: 'ship_via', index: 'ship_via', width: 105, align: 'center', editable: true, formatter: 'select',
+                        edittype: 'select', editoptions: { value: 'FE:FedEx;TN:TNT;IN:Intim', defaultValue: 'IN' },
+                        stype: 'select', searchoptions: { sopt: ['eq', 'ne'], value: ':Any;FE:FedEx;TN:TNT;IN:IN' } }, // 7th
+                    { name: 'note', index: 'note', width: 60, sortable: false, editable: true, edittype: 'textarea' }//8th
+                   ],//7 column model 
+                
+		rowNum: 10,
+                rowList: [5, 10, 20],
+                pager: '#pager',
+                gridview: false,
+                rownumbers: true,
+                autoencode: true,
+                ignoreCase: true,
+                sortname: 'invdate',
+                viewrecords: true,
+                sortorder: 'desc',
+                height: '100%',
+                caption: 'OneEmpower Table'  });
+    //-------------------------------------------------------------------------------
+ 		
+	    $grid.jqGrid('navGrid', '#pager', {refreshstate: 'current', add: true, edit: true, del:true}) //jqgrid
+
+
+            $.extend(true, $.ui.multiselect, {
+                locale: {
+                    addAll: 'Make all visible',
+                    removeAll: 'Hidde All',
+                    itemsCount: 'Available Columns'
+                }//locale
+            }); //column select 
+     //-------------------------------------------------------------------------------      
+            $grid.jqGrid('navButtonAdd', '#pager', 
+	    {
+                caption: "",
+                buttonicon: "ui-icon-calculator",
+                title: "Choose columns",
+                
+		onClickButton: function () 
+		{
+                  $(this).jqGrid('columnChooser', {width: 550, msel_opts: {dividerLocation: 0.5}});
+
+                  $("#colchooser_" + $.jgrid.jqID(this.id) + ' div.available>div.actions')
+                        .prepend('<label style="float:left;position:relative;margin-left:0.6em;top:0.6em">Search:</label>');
+                }
+            });//Choose column icon and functionality
+      //-------------------------------------------------------------------------------      
+//$grid.setGridWidth($('#gridDiv').width(), true);
+//});
+             $grid.setGridWidth($(window).width());
+        // $(window).bind('resize', function() {$("#gridDiv").setGridWidth($(window).width());}).trigger('resize');
+
+    //$grid.setGridWidth($(window).width());
+     //$('.ui-jqdialog').center();
+     //$grid.setGridWidth($('#gridDiv').width(), true);
+      
+     // $grid.setGridWidth($('#gridDiv').width(), true);
+     //-------------------------------------------------------------------------------   
+});
+    </script>
+
+</head>
+
+
+<body>
+
+<!-- <div class="table-responsive" > <div class ="rt cf" >  </div> -->
+<div class ="container" >
+<section>  
+    <div class="table-responsive row" >
+    <table id="list" class="table"> <tr><th class="cf"></th></tr> <tr><td><td/></tr></table> 
+    <div id="pager">
+    </div> </div>
+</section>
+
+<hr>
+
+<section>  
+<div id="pricing" class="row">
+<div class="col-sm-3">
+<table>
+<tr><th><h1>Product</th></tr>
+<tr><td><p><h6> This project is under active, but slow development. There has been a great deal of work done in branches to introduce compatibility with jQuery UI 1.9 and further work done to move us towards using LESS and improved parity with Bootstrap 3.x. </h6></p> </td></tr>
+</table>
+</div><!-- 1-->
+<div class="col-sm-3"><table>
+<tr><th><h1>Product</h1></th></tr>
+<tr><td><p><h6> This project is under active, but slow development. There has been a great deal of work done in branches to introduce compatibility with jQuery UI 1.9 and further work done to move us towards using LESS and improved parity with Bootstrap 3.x. </h6></p> </td></tr>
+</table></div><!--2 -->
+<div class="col-sm-3"><table>
+<tr><th><h1>Product</h1></th></tr>
+<tr><td><p><h6> This project is under active, but slow development. There has been a great deal of work done in branches to introduce compatibility with jQuery UI 1.9 and further work done to move us towards using LESS and improved parity with Bootstrap 3.x. </h6></p> </td></tr>
+</table></div><!--3 -->
+<div class="col-sm-3"><table>
+<tr><th><h1>Product</h1></th></tr>
+<tr><td><p><h6> This project is under active, but slow development. There has been a great deal of work done in branches to introduce compatibility with jQuery UI 1.9 and further work done to move us towards using LESS and improved parity with Bootstrap 3.x. </h6></p> </td></tr>
+</table></div><!--4 -->
+</div><!--row class -->
+</section>  <!-- grid section -->
+
+<hr>
+
+<section>  
+<p><h6> This project is under active, but slow development. There has been a great deal of work done in branches to introduce compatibility with jQuery UI 1.9 and further work done to move us towards using LESS and improved parity with Bootstrap 3.x. </h6></p>
+
+<p><h6>At this time, we are seeking contributors interested in helping us to finally complete the work needed to be Bootstrap 3.x compatible. This would involve helping in your spare time across a few weeks and you would be given credit in the project README.<h6></p>
+
+<p><h6>As one of the (currently) more popular open-source jQuery UI themes we would love to get out more frequent releases and your help with this would be greatly appreciated.<h6></p>
+
+<p><h6>At this time, we are seeking contributors interested in helping us to finally complete the work needed to be Bootstrap 3.x compatible. This would involve helping in your spare time across a few weeks and you would be given credit in the project README.<h6></p>
+</section>   <!-- para -->
+
+<script src="js/bootstrap.min.js"></script>
+
+</div>
+
+</body>
+</html>

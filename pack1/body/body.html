@@ -1,0 +1,453 @@
+<div id="gbox_list" class="ui-jqgrid ui-widget ui-widget-content ui-corner-all" dir="ltr" style="width: 700px;">
+<div id="lui_list" class="ui-widget-overlay jqgrid-overlay"></div>
+<div id="load_list" class="loading ui-state-default ui-state-active" style="display: none;">Loading...</div>
+<div id="searchmodfbox_list" class="ui-widget ui-widget-content ui-corner-all ui-jqdialog jqmID1" dir="ltr" style="width: 450px; height: auto; z-index: 950; overflow: hidden; top: 12px; left: 12px; display: none;" tabindex="-1" role="dialog" aria-labelledby="searchhdfbox_list" aria-hidden="true">
+<div id="searchhdfbox_list" class="ui-jqdialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix" style="cursor: move;">
+<span class="ui-jqdialog-title" style="float: left;">Search...</span>
+<a class="ui-jqdialog-titlebar-close ui-corner-all ui-state-hover" href="javascript:void(0)" style="right: 0.3em;">
+<span class="ui-icon ui-icon-closethick"></span>
+</a>
+</div>
+<div id="searchcntfbox_list" class="ui-jqdialog-content ui-widget-content">
+<div>
+<div id="fbox_list" class="searchFilter" style="overflow:auto">
+<table class="group ui-widget ui-widget-content" style="border:0px none;">
+<tbody>
+<tr class="error" style="display:none;">
+<th class="ui-state-error" align="left" colspan="5"></th>
+</tr>
+<tr>
+<th align="left" colspan="5">
+<span></span>
+</th>
+</tr>
+<tr>
+<td class="first"></td>
+<td class="columns">
+<select>
+<option selected="selected" value="name">Client</option>
+<option value="invdate">Date</option>
+<option value="amount">Amount</option>
+<option value="tax">Tax</option>
+<option value="total">Total</option>
+<option value="closed">Closed</option>
+<option value="ship_via">Shipped via</option>
+<option value="note">Notes</option>
+</select>
+</td>
+<td class="operators">
+<select class="selectopts">
+<option selected="selected" value="eq">equal</option>
+<option value="ne">not equal</option>
+<option value="bw">begins with</option>
+<option value="bn">does not begin with</option>
+<option value="ew">ends with</option>
+<option value="en">does not end with</option>
+<option value="cn">contains</option>
+<option value="nc">does not contain</option>
+<option value="nu">is null</option>
+<option value="nn">is not null</option>
+<option value="in">is in</option>
+<option value="ni">is not in</option>
+</select>
+</td>
+<td class="data">
+<input id="jqg9" class="input-elm" type="text" style="width: 98%;" role="textbox">
+</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<table id="fbox_list_2" class="EditTable" style="border:0px none;margin-top:5px">
+<tbody>
+<tr>
+<td colspan="2">
+<hr class="ui-widget-content" style="margin:1px">
+</td>
+</tr>
+<tr>
+<td class="EditButton" style="text-align:left">
+<a id="fbox_list_reset" class="fm-button ui-state-default ui-corner-all fm-button-icon-left ui-search" href="javascript:void(0)">
+<span class="ui-icon ui-icon-arrowreturnthick-1-w"></span>
+Reset
+</a>
+</td>
+<td class="EditButton">
+<a id="fbox_list_search" class="fm-button ui-state-default ui-corner-all fm-button-icon-right ui-reset" href="javascript:void(0)">
+<span class="ui-icon ui-icon-search"></span>
+Find
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="jqResize ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se ui-icon-grip-diagonal-se"></div>
+</div>
+<div id="gview_list" class="ui-jqgrid-view" style="width: 700px;">
+<div class="ui-jqgrid-titlebar ui-widget-header ui-corner-top ui-helper-clearfix">
+<a class="ui-jqgrid-titlebar-close HeaderButton" href="javascript:void(0)" role="link" style="right: 0px;">
+<span class="ui-icon ui-icon-circle-triangle-n"></span>
+</a>
+<span class="ui-jqgrid-title">Demonstrate how to use the columnChooser</span>
+</div>
+<div class="ui-state-default ui-jqgrid-hdiv" style="width: 700px; cursor: default;">
+<div class="ui-jqgrid-hbox">
+<table class="ui-jqgrid-htable" cellspacing="0" cellpadding="0" border="0" aria-labelledby="gbox_list" role="grid" style="width: 702px;">
+<thead>
+<tr class="ui-jqgrid-labels" role="rowheader">
+<th id="list_rn" class="ui-state-default ui-th-column ui-th-ltr" role="columnheader" style="width: 25px;">
+<div id="jqgh_list_rn">
+<span class="s-ico" style="display:none">
+<span class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr" sort="asc"></span>
+<span class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr" sort="desc"></span>
+</span>
+</div>
+</th>
+<th id="list_name" class="ui-state-default ui-th-column ui-th-ltr" role="columnheader" style="width: 123px;" aria-selected="true">
+<span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;"> </span>
+<div id="jqgh_list_name" class="ui-jqgrid-sortable">
+Client
+<span class="s-ico" style="">
+<span class="ui-grid-ico-sort ui-icon-asc ui-icon ui-icon-triangle-1-n ui-sort-ltr" sort="asc"></span>
+<span class="ui-grid-ico-sort ui-icon-desc ui-icon ui-icon-triangle-1-s ui-sort-ltr ui-state-disabled" sort="desc"></span>
+</span>
+</div>
+</th>
+<th id="list_invdate" class="ui-state-default ui-th-column ui-th-ltr" role="columnheader" style="width: 80px;" aria-selected="false">
+<span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;"> </span>
+<div id="jqgh_list_invdate" class="ui-jqgrid-sortable">
+Date
+<span class="s-ico" style="display: none;">
+<span class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr" sort="asc"></span>
+<span class="ui-grid-ico-sort ui-icon-desc ui-icon ui-icon-triangle-1-s ui-sort-ltr ui-state-disabled" sort="desc"></span>
+</span>
+</div>
+</th>
+<th id="list_amount" class="ui-state-default ui-th-column ui-th-ltr" role="columnheader" style="width: 62px;">
+<span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;"> </span>
+<div id="jqgh_list_amount" class="ui-jqgrid-sortable">
+Amount
+<span class="s-ico" style="display:none">
+<span class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr" sort="asc"></span>
+<span class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr" sort="desc"></span>
+</span>
+</div>
+</th>
+<th id="list_tax" class="ui-state-default ui-th-column ui-th-ltr" role="columnheader" style="width: 55px;">
+<span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;"> </span>
+<div id="jqgh_list_tax" class="ui-jqgrid-sortable">
+Tax
+<span class="s-ico" style="display:none">
+<span class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr" sort="asc"></span>
+<span class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr" sort="desc"></span>
+</span>
+</div>
+</th>
+<th id="list_total" class="ui-state-default ui-th-column ui-th-ltr" role="columnheader" style="width: 65px;">
+<span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;"> </span>
+<div id="jqgh_list_total" class="ui-jqgrid-sortable">
+Total
+<span class="s-ico" style="display:none">
+<span class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr" sort="asc"></span>
+<span class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr" sort="desc"></span>
+</span>
+</div>
+</th>
+<th id="list_closed" class="ui-state-default ui-th-column ui-th-ltr" role="columnheader" style="width: 75px;">
+<span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;"> </span>
+<div id="jqgh_list_closed" class="ui-jqgrid-sortable">
+Closed
+<span class="s-ico" style="display:none">
+<span class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr" sort="asc"></span>
+<span class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr" sort="desc"></span>
+</span>
+</div>
+</th>
+<th id="list_ship_via" class="ui-state-default ui-th-column ui-th-ltr" role="columnheader" style="width: 71px;">
+<span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;"> </span>
+<div id="jqgh_list_ship_via" class="ui-jqgrid-sortable">
+Shipped via
+<span class="s-ico" style="display:none">
+<span class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr" sort="asc"></span>
+<span class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr" sort="desc"></span>
+</span>
+</div>
+</th>
+<th id="list_note" class="ui-state-default ui-th-column ui-th-ltr" role="columnheader" style="width: 101px;">
+<span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;"> </span>
+<div id="jqgh_list_note" class="ui-jqgrid-sortable">
+Notes
+<span class="s-ico" style="display:none">
+<span class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr" sort="asc"></span>
+<span class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr" sort="desc"></span>
+</span>
+</div>
+</th>
+</tr>
+</thead>
+</table>
+</div>
+</div>
+<div class="ui-jqgrid-bdiv" style="height: 100%; width: 700px;">
+<div style="position:relative;">
+<div></div>
+<table id="list" class="ui-jqgrid-btable" cellspacing="0" cellpadding="0" border="0" tabindex="1" role="grid" aria-multiselectable="false" aria-labelledby="gbox_list" style="width: 702px;">
+<tbody>
+<tr class="jqgfirstrow" style="height:auto" role="row">
+<tr id="1" class="ui-widget-content jqgrow ui-row-ltr" role="row" tabindex="-1">
+<td class="ui-state-default jqgrid-rownum" aria-describedby="list_rn" title="1" style="text-align:center;width: 25px;" role="gridcell">1</td>
+<td aria-describedby="list_name" title="test" style="" role="gridcell">test</td>
+<td aria-describedby="list_invdate" title="01-Oct-2007" style="text-align:center;" role="gridcell">01-Oct-2007</td>
+<td aria-describedby="list_amount" title="200.00" style="text-align:right;" role="gridcell">200.00</td>
+<td aria-describedby="list_tax" title="10.00" style="text-align:right;" role="gridcell">10.00</td>
+<td aria-describedby="list_total" title="210.00" style="text-align:right;" role="gridcell">210.00</td>
+<td aria-describedby="list_closed" title="" style="text-align:center;" role="gridcell">
+<input type="checkbox" disabled="disabled" offval="no" value="true" checked="checked">
+</td>
+<td aria-describedby="list_ship_via" title="TNT" style="text-align:center;" role="gridcell">TNT</td>
+<td aria-describedby="list_note" title="note" style="" role="gridcell">note</td>
+</tr>
+<tr id="10" class="ui-widget-content jqgrow ui-row-ltr" role="row" tabindex="-1">
+<td class="ui-state-default jqgrid-rownum" aria-describedby="list_rn" title="2" style="text-align:center;" role="gridcell">2</td>
+<td aria-describedby="list_name" title="test10" style="" role="gridcell">test10</td>
+<td aria-describedby="list_invdate" title="08-Sep-2007" style="text-align:center;" role="gridcell">08-Sep-2007</td>
+<td aria-describedby="list_amount" title="500.00" style="text-align:right;" role="gridcell">500.00</td>
+<td aria-describedby="list_tax" title="30.00" style="text-align:right;" role="gridcell">30.00</td>
+<td aria-describedby="list_total" title="530.00" style="text-align:right;" role="gridcell">530.00</td>
+<td aria-describedby="list_closed" title="" style="text-align:center;" role="gridcell">
+<input type="checkbox" disabled="disabled" offval="no" value="true" checked="checked">
+</td>
+<td aria-describedby="list_ship_via" title="TNT" style="text-align:center;" role="gridcell">TNT</td>
+<td aria-describedby="list_note" title="note10" style="" role="gridcell">note10</td>
+</tr>
+<tr id="11" class="ui-widget-content jqgrow ui-row-ltr" role="row" tabindex="-1">
+<td class="ui-state-default jqgrid-rownum" aria-describedby="list_rn" title="3" style="text-align:center;" role="gridcell">3</td>
+<td aria-describedby="list_name" title="test11" style="" role="gridcell">test11</td>
+<td aria-describedby="list_invdate" title="08-Sep-2007" style="text-align:center;" role="gridcell">08-Sep-2007</td>
+<td aria-describedby="list_amount" title="500.00" style="text-align:right;" role="gridcell">500.00</td>
+<td aria-describedby="list_tax" title="30.00" style="text-align:right;" role="gridcell">30.00</td>
+<td aria-describedby="list_total" title="530.00" style="text-align:right;" role="gridcell">530.00</td>
+<td aria-describedby="list_closed" title="" style="text-align:center;" role="gridcell">
+<input type="checkbox" disabled="disabled" offval="no" value="false">
+</td>
+<td aria-describedby="list_ship_via" title="FedEx" style="text-align:center;" role="gridcell">FedEx</td>
+<td aria-describedby="list_note" title="note11" style="" role="gridcell">note11</td>
+</tr>
+<tr id="12" class="ui-widget-content jqgrow ui-row-ltr" role="row" tabindex="-1">
+<td class="ui-state-default jqgrid-rownum" aria-describedby="list_rn" title="4" style="text-align:center;" role="gridcell">4</td>
+<td aria-describedby="list_name" title="test12" style="" role="gridcell">test12</td>
+<td aria-describedby="list_invdate" title="10-Sep-2007" style="text-align:center;" role="gridcell">10-Sep-2007</td>
+<td aria-describedby="list_amount" title="500.00" style="text-align:right;" role="gridcell">500.00</td>
+<td aria-describedby="list_tax" title="30.00" style="text-align:right;" role="gridcell">30.00</td>
+<td aria-describedby="list_total" title="530.00" style="text-align:right;" role="gridcell">530.00</td>
+<td aria-describedby="list_closed" title="" style="text-align:center;" role="gridcell">
+<input type="checkbox" disabled="disabled" offval="no" value="false">
+</td>
+<td aria-describedby="list_ship_via" title="FedEx" style="text-align:center;" role="gridcell">FedEx</td>
+<td aria-describedby="list_note" title="note12" style="" role="gridcell">note12</td>
+</tr>
+<tr id="2" class="ui-widget-content jqgrow ui-row-ltr" role="row" tabindex="-1">
+<td class="ui-state-default jqgrid-rownum" aria-describedby="list_rn" title="5" style="text-align:center;" role="gridcell">5</td>
+<td aria-describedby="list_name" title="test2" style="" role="gridcell">test2</td>
+<td aria-describedby="list_invdate" title="02-Oct-2007" style="text-align:center;" role="gridcell">02-Oct-2007</td>
+<td aria-describedby="list_amount" title="300.00" style="text-align:right;" role="gridcell">300.00</td>
+<td aria-describedby="list_tax" title="20.00" style="text-align:right;" role="gridcell">20.00</td>
+<td aria-describedby="list_total" title="320.00" style="text-align:right;" role="gridcell">320.00</td>
+<td aria-describedby="list_closed" title="" style="text-align:center;" role="gridcell">
+<input type="checkbox" disabled="disabled" offval="no" value="false">
+</td>
+<td aria-describedby="list_ship_via" title="FedEx" style="text-align:center;" role="gridcell">FedEx</td>
+<td aria-describedby="list_note" title="note2" style="" role="gridcell">note2</td>
+</tr>
+<tr id="3" class="ui-widget-content jqgrow ui-row-ltr" role="row" tabindex="-1">
+<td class="ui-state-default jqgrid-rownum" aria-describedby="list_rn" title="6" style="text-align:center;" role="gridcell">6</td>
+<td aria-describedby="list_name" title="test3" style="" role="gridcell">test3</td>
+<td aria-describedby="list_invdate" title="01-Sep-2007" style="text-align:center;" role="gridcell">01-Sep-2007</td>
+<td aria-describedby="list_amount" title="400.00" style="text-align:right;" role="gridcell">400.00</td>
+<td aria-describedby="list_tax" title="30.00" style="text-align:right;" role="gridcell">30.00</td>
+<td aria-describedby="list_total" title="430.00" style="text-align:right;" role="gridcell">430.00</td>
+<td aria-describedby="list_closed" title="" style="text-align:center;" role="gridcell">
+<input type="checkbox" disabled="disabled" offval="no" value="false">
+</td>
+<td aria-describedby="list_ship_via" title="FedEx" style="text-align:center;" role="gridcell">FedEx</td>
+<td aria-describedby="list_note" title="note3" style="" role="gridcell">note3</td>
+</tr>
+<tr id="4" class="ui-widget-content jqgrow ui-row-ltr" role="row" tabindex="-1">
+<td class="ui-state-default jqgrid-rownum" aria-describedby="list_rn" title="7" style="text-align:center;" role="gridcell">7</td>
+<td aria-describedby="list_name" title="test4" style="" role="gridcell">test4</td>
+<td aria-describedby="list_invdate" title="04-Oct-2007" style="text-align:center;" role="gridcell">04-Oct-2007</td>
+<td aria-describedby="list_amount" title="200.00" style="text-align:right;" role="gridcell">200.00</td>
+<td aria-describedby="list_tax" title="10.00" style="text-align:right;" role="gridcell">10.00</td>
+<td aria-describedby="list_total" title="210.00" style="text-align:right;" role="gridcell">210.00</td>
+<td aria-describedby="list_closed" title="" style="text-align:center;" role="gridcell">
+<input type="checkbox" disabled="disabled" offval="no" value="true" checked="checked">
+</td>
+<td aria-describedby="list_ship_via" title="TNT" style="text-align:center;" role="gridcell">TNT</td>
+<td aria-describedby="list_note" title="note4" style="" role="gridcell">note4</td>
+</tr>
+<tr id="5" class="ui-widget-content jqgrow ui-row-ltr" role="row" tabindex="-1">
+<td class="ui-state-default jqgrid-rownum" aria-describedby="list_rn" title="8" style="text-align:center;" role="gridcell">8</td>
+<td aria-describedby="list_name" title="test5" style="" role="gridcell">test5</td>
+<td aria-describedby="list_invdate" title="31-Oct-2007" style="text-align:center;" role="gridcell">31-Oct-2007</td>
+<td aria-describedby="list_amount" title="300.00" style="text-align:right;" role="gridcell">300.00</td>
+<td aria-describedby="list_tax" title="20.00" style="text-align:right;" role="gridcell">20.00</td>
+<td aria-describedby="list_total" title="320.00" style="text-align:right;" role="gridcell">320.00</td>
+<td aria-describedby="list_closed" title="" style="text-align:center;" role="gridcell">
+<input type="checkbox" disabled="disabled" offval="no" value="false">
+</td>
+<td aria-describedby="list_ship_via" title="FedEx" style="text-align:center;" role="gridcell">FedEx</td>
+<td aria-describedby="list_note" title="note5" style="" role="gridcell">note5</td>
+</tr>
+<tr id="6" class="ui-widget-content jqgrow ui-row-ltr" role="row" tabindex="-1">
+<td class="ui-state-default jqgrid-rownum" aria-describedby="list_rn" title="9" style="text-align:center;" role="gridcell">9</td>
+<td aria-describedby="list_name" title="test6" style="" role="gridcell">test6</td>
+<td aria-describedby="list_invdate" title="06-Sep-2007" style="text-align:center;" role="gridcell">06-Sep-2007</td>
+<td aria-describedby="list_amount" title="400.00" style="text-align:right;" role="gridcell">400.00</td>
+<td aria-describedby="list_tax" title="30.00" style="text-align:right;" role="gridcell">30.00</td>
+<td aria-describedby="list_total" title="430.00" style="text-align:right;" role="gridcell">430.00</td>
+<td aria-describedby="list_closed" title="" style="text-align:center;" role="gridcell">
+<input type="checkbox" disabled="disabled" offval="no" value="false">
+</td>
+<td aria-describedby="list_ship_via" title="FedEx" style="text-align:center;" role="gridcell">FedEx</td>
+<td aria-describedby="list_note" title="note6" style="" role="gridcell">note6</td>
+</tr>
+<tr id="7" class="ui-widget-content jqgrow ui-row-ltr" role="row" tabindex="-1">
+<td class="ui-state-default jqgrid-rownum" aria-describedby="list_rn" title="10" style="text-align:center;" role="gridcell">10</td>
+<td aria-describedby="list_name" title="test7" style="" role="gridcell">test7</td>
+<td aria-describedby="list_invdate" title="04-Oct-2007" style="text-align:center;" role="gridcell">04-Oct-2007</td>
+<td aria-describedby="list_amount" title="200.00" style="text-align:right;" role="gridcell">200.00</td>
+<td aria-describedby="list_tax" title="10.00" style="text-align:right;" role="gridcell">10.00</td>
+<td aria-describedby="list_total" title="210.00" style="text-align:right;" role="gridcell">210.00</td>
+<td aria-describedby="list_closed" title="" style="text-align:center;" role="gridcell">
+<input type="checkbox" disabled="disabled" offval="no" value="true" checked="checked">
+</td>
+<td aria-describedby="list_ship_via" title="TNT" style="text-align:center;" role="gridcell">TNT</td>
+<td aria-describedby="list_note" title="note7" style="" role="gridcell">note7</td>
+</tr>
+<tr id="8" class="ui-widget-content jqgrow ui-row-ltr" role="row" tabindex="-1">
+<td class="ui-state-default jqgrid-rownum" aria-describedby="list_rn" title="11" style="text-align:center;" role="gridcell">11</td>
+<td aria-describedby="list_name" title="test8" style="" role="gridcell">test8</td>
+<td aria-describedby="list_invdate" title="03-Oct-2007" style="text-align:center;" role="gridcell">03-Oct-2007</td>
+<td aria-describedby="list_amount" title="300.00" style="text-align:right;" role="gridcell">300.00</td>
+<td aria-describedby="list_tax" title="20.00" style="text-align:right;" role="gridcell">20.00</td>
+<td aria-describedby="list_total" title="320.00" style="text-align:right;" role="gridcell">320.00</td>
+<td aria-describedby="list_closed" title="" style="text-align:center;" role="gridcell">
+<input type="checkbox" disabled="disabled" offval="no" value="false">
+</td>
+<td aria-describedby="list_ship_via" title="FedEx" style="text-align:center;" role="gridcell">FedEx</td>
+<td aria-describedby="list_note" title="note8" style="" role="gridcell">note8</td>
+</tr>
+<tr id="9" class="ui-widget-content jqgrow ui-row-ltr" role="row" tabindex="-1">
+<td class="ui-state-default jqgrid-rownum" aria-describedby="list_rn" title="12" style="text-align:center;" role="gridcell">12</td>
+<td aria-describedby="list_name" title="test9" style="" role="gridcell">test9</td>
+<td aria-describedby="list_invdate" title="01-Sep-2007" style="text-align:center;" role="gridcell">01-Sep-2007</td>
+<td aria-describedby="list_amount" title="400.00" style="text-align:right;" role="gridcell">400.00</td>
+<td aria-describedby="list_tax" title="30.00" style="text-align:right;" role="gridcell">30.00</td>
+<td aria-describedby="list_total" title="430.00" style="text-align:right;" role="gridcell">430.00</td>
+<td aria-describedby="list_closed" title="" style="text-align:center;" role="gridcell">
+<input type="checkbox" disabled="disabled" offval="no" value="false">
+</td>
+<td aria-describedby="list_ship_via" title="TNT" style="text-align:center;" role="gridcell">TNT</td>
+<td aria-describedby="list_note" title="note9" style="" role="gridcell">note9</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="rs_mlist" class="ui-jqgrid-resize-mark" style="display: none; left: 158px; top: 21.5px; height: 298px;"> </div>
+<div id="pager" class="ui-state-default ui-jqgrid-pager ui-corner-bottom" style="width: 700px;" dir="ltr">
+<div id="pg_pager" class="ui-pager-control" role="group">
+<table class="ui-pg-table" cellspacing="0" cellpadding="0" border="0" role="row" style="width:100%;table-layout:fixed;height:100%;">
+<tbody>
+<tr>
+<td id="pager_left" align="left">
+<table class="ui-pg-table navtable" cellspacing="0" cellpadding="0" border="0" style="float:left;table-layout:auto;">
+<tbody>
+<tr>
+<td id="search_list" class="ui-pg-button ui-corner-all" title="Find records">
+<div class="ui-pg-div">
+<span class="ui-icon ui-icon-search"></span>
+</div>
+</td>
+<td id="refresh_list" class="ui-pg-button ui-corner-all" title="Reload Grid">
+<div class="ui-pg-div">
+<span class="ui-icon ui-icon-refresh"></span>
+</div>
+</td>
+<td class="ui-pg-button ui-corner-all" title="Choose columns">
+<div class="ui-pg-div">
+<span class="ui-icon ui-icon-calculator"></span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td id="pager_center" align="center" style="white-space: pre; width: 249px;">
+<table class="ui-pg-table" cellspacing="0" cellpadding="0" border="0" style="table-layout:auto;">
+<tbody>
+<tr>
+<td id="first_pager" class="ui-pg-button ui-corner-all ui-state-disabled" style="cursor: default;">
+<span class="ui-icon ui-icon-seek-first"></span>
+</td>
+<td id="prev_pager" class="ui-pg-button ui-corner-all ui-state-disabled" style="cursor: default;">
+<span class="ui-icon ui-icon-seek-prev"></span>
+</td>
+<td class="ui-pg-button ui-state-disabled" style="width: 4px; cursor: default;">
+<span class="ui-separator"></span>
+</td>
+<td dir="ltr">
+Page
+<input class="ui-pg-input" type="text" role="textbox" value="0" maxlength="7" size="2">
+of
+<span id="sp_1_pager">1</span>
+</td>
+<td class="ui-pg-button ui-state-disabled" style="width: 4px; cursor: default;">
+<span class="ui-separator"></span>
+</td>
+<td id="next_pager" class="ui-pg-button ui-corner-all ui-state-disabled" style="cursor: default;">
+<span class="ui-icon ui-icon-seek-next"></span>
+</td>
+<td id="last_pager" class="ui-pg-button ui-corner-all ui-state-disabled" style="cursor: default;">
+<span class="ui-icon ui-icon-seek-end"></span>
+</td>
+<td dir="ltr">
+<select class="ui-pg-selbox" role="listbox">
+<option value="5" role="option">5</option>
+<option selected="selected" value="10" role="option">10</option>
+<option value="20" role="option">20</option>
+</select>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td id="pager_right" align="right">
+<div class="ui-paging-info" style="text-align:right" dir="ltr">View 1 - 12 of 12</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="alertmod" class="ui-widget ui-widget-content ui-corner-all ui-jqdialog" dir="ltr" style="width: 200px; height: auto; z-index: 950; overflow: hidden; top: 155.5px; left: 550.5px;" tabindex="-1" role="dialog" aria-labelledby="alerthd" aria-hidden="true">
+<div id="alerthd" class="ui-jqdialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix" style="cursor: move;">
+<span class="ui-jqdialog-title" style="float: left;">Warning</span>
+<a class="ui-jqdialog-titlebar-close ui-corner-all" href="javascript:void(0)" style="right: 0.3em;">
+<span class="ui-icon ui-icon-closethick"></span>
+</a>
+</div>
+<div id="alertcnt" class="ui-jqdialog-content ui-widget-content">
+<div>Please, select row</div>
+<span tabindex="0">
+<span id="jqg_alrt" tabindex="-1"></span>
+</span>
+</div>
+<div class="jqResize ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se ui-icon-grip-diagonal-se"></div>
+</div>
+
